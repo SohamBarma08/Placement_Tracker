@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   const user = true;
   return (
+    <>
     <div className="bg-white">
       <div className="flex items-center justify-between mx-auto max-w-7xl h-16">
         <div>
@@ -19,8 +20,8 @@ const Navbar = () => {
         <div className="flex item-center gap-12">
           <ul className="flex font-medium items-center gap-5">
             <li><Link to="/">Home</Link></li>
-            <li>Jobs</li>
-            <li>Status</li>
+            <li><Link to="/jobs">Jobs</Link></li>
+            <li>Browse</li>
           </ul>
           {
             !user ?(
@@ -63,6 +64,7 @@ const Navbar = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
