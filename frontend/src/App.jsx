@@ -1,10 +1,20 @@
 import './App.css'
-import Navbar from './components/shared/Navbar'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import Home from './components/Home'
+
+
+const appRouter = createBrowserRouter([
+{
+  path: '/',
+  element: <Home/>
+},
+
+])
 
 function App() {
   return (
     <>
-      {/* <h1 className="text-red-500">Lets built job portal</h1> */}
+      <RouterProvider router={appRouter} />
       <Navbar/>
     </>
   );
