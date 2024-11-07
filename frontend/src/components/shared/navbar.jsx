@@ -21,7 +21,6 @@ const Navbar = () => {
           <ul className="flex font-medium items-center gap-5">
             <li><Link to="/">Home</Link></li>
             <li><Link to="/jobs">Jobs</Link></li>
-            <li>Browse</li>
           </ul>
           {
             !user ?(
@@ -30,8 +29,8 @@ const Navbar = () => {
                 <Button>Signup</Button>
               </div>
              ) : (
-              <Popover>
-              <PopoverTrigger asChild>
+              <Popover >
+              <PopoverTrigger asChild >
                 <Avatar className="cursor-pointer">
                   <AvatarImage
                     src="https://github.com/shadcn.png"
@@ -39,7 +38,7 @@ const Navbar = () => {
                   />
                 </Avatar>
               </PopoverTrigger>
-              <PopoverContent className="w-80">
+              <PopoverContent className="w-80 bg-white">
                 <div className="flex gap-4 space-y-2">
                   <Avatar className="cursor-pointer">
                     <AvatarImage
