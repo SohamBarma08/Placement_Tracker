@@ -5,6 +5,7 @@ import HeroSection from './HeroSection'
 import CategoryCarousel from './CategoryCrousel'
 import LatestJobs from './LatestJobs'
 import Footer from './shared/Footer'
+import AppliedJobTable from './AppliedJobTable'
 
 const Home = () => {
   return (
@@ -12,7 +13,7 @@ const Home = () => {
       <Navbar/>
       <HeroSection/>
       <CategoryCarousel/>
-      <LatestJobs/>
+      <AppliedJobTable/>
       <Footer/>
     </div>
   )
