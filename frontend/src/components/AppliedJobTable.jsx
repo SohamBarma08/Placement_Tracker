@@ -1,12 +1,12 @@
 import React from 'react'
 import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from './ui/table'
 import { Badge } from './ui/badge'
-
+import { useSelector } from 'react-redux'
 
 const AppliedJobTable = () => {
+    const {allAppliedJobs} = useSelector(store=>store.job);
     return (
-        <div className='m-4'>
-            <h1 className='text-2xl font-bold text-center'>Applied Jobs</h1>
+        <div>
             <Table>
                 <TableCaption>A list of your applied jobs</TableCaption>
                 <TableHeader>
@@ -14,17 +14,17 @@ const AppliedJobTable = () => {
                         <TableHead>Date</TableHead>
                         <TableHead>Job Role</TableHead>
                         <TableHead>Company</TableHead>
-                        <TableHead>Status</TableHead>
+                        <TableHead className="text-right">Status</TableHead>
                     </TableRow>
                 </TableHeader>
                 <TableBody>
                     {
-                        [1, 2, 3, 4].map((item,index) => (
-                            <TableRow key={index}>
-                                <TableCell>07-11-2024</TableCell>
-                                <TableCell>Frontend Developer</TableCell>
-                                <TableCell>Google</TableCell>
-                                <TableCell><Badge className={'text-white-700 text-border font-bold  '} variant="ghost">Selected</Badge></TableCell>
+                        allAppliedJobs.length <= 0 ? <span>You haven't applied any job yet.</span> : allAppliedJobs.map((appliedJob) => (
+                            <TableRow key={appliedJob._id}>
+                                <TableCell>{appliedJob?.createdAt?.split("T")[0]}</TableCell>
+                                <TableCell>{appliedJob.job?.title}</TableCell>
+                                <TableCell>{appliedJob.job?.company?.name}</TableCell>
+                                <TableCell className="text-right"><Badge className={`${appliedJob?.status === "rejected" ? 'bg-red-400' : appliedJob.status === 'pending' ? 'bg-gray-400' : 'bg-green-400'}`}>{appliedJob.status.toUpperCase()}</Badge></TableCell>
                             </TableRow>
                         ))
                     }

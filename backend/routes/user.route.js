@@ -4,7 +4,7 @@ import {
   logout,
   register,
   updateProfile,
-} from "../controllers/use.controller.js";
+} from "../controllers/user.controller.js";
 import isAuthenticated from "../middleware/isAunthicated.js";
 import { singleupload } from "../middleware/multer.js";
 
