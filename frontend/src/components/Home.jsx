@@ -8,6 +8,7 @@ import Footer from './shared/Footer'
 import AppliedJobTable from './AppliedJobTable'
 
 const Home = () => {
+  
   return (
     <div>
       <Navbar/>
