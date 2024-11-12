@@ -9,9 +9,11 @@ import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import AppliedJobTable from './AppliedJobTable'
 import useGetAppliedJobs from '@/hooks/useGetAppliedJobs'
+import useGetAllJobs from '@/hooks/useGetAllJobs'
 
 const Home = () => {
   useGetAppliedJobs();
+  useGetAllJobs();
   const { user } = useSelector(store => store.auth);
   const navigate = useNavigate();
   useEffect(() => {
