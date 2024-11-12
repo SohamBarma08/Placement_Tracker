@@ -76,28 +76,29 @@ const Navbar = () => {
           ) : (
             <Popover>
               <PopoverTrigger asChild>
-                <Avatar className="cursor-pointer">
+              <h4 className="font-medium cursor-pointer text-[#F83002]">{user?.fullname}</h4>
+                {/* <Avatar className="cursor-pointer">
                   <AvatarImage
                     src={user?.profile?.profilePhoto}
                     alt="@shadcn"
                   />
-                </Avatar>
+                </Avatar> */}
               </PopoverTrigger>
               <PopoverContent className="w-80">
                 <div className="">
                   <div className="flex gap-2 space-y-2">
-                    <Avatar className="cursor-pointer">
+                    {/* <Avatar className="cursor-pointer">
                       <AvatarImage
                         src={user?.profile?.profilePhoto}
                         alt="@shadcn"
                       />
-                    </Avatar>
-                    <div>
-                      <h4 className="font-medium">{user?.fullname}</h4>
+                    </Avatar> */}
+                    {/* <div> */}
+                      {/* <h4 className="font-medium">{user?.fullname}</h4> */}
                       <p className="text-sm text-muted-foreground">
                         {user?.profile?.bio}
                       </p>
-                    </div>
+                    {/* </div> */}
                   </div>
                   <div className="flex flex-col my-2 text-gray-600">
                     {user && user.role === "student" && (
